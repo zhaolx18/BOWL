@@ -1,5 +1,6 @@
+# Latin Hypercube Sampling for SWAT runoff parameters
 # -*- coding: utf-8 -*-
-#Requisite: Python 3.10+, pyDOE2, numpy
+
 
 from multiprocessing import cpu_count
 from multiprocessing.pool import Pool
@@ -103,15 +104,15 @@ class ProcessSWAT(object):
                         tmp_string="{:.8g}".format(self.__paraList[0][j])
                     elif self.__bsnParameter[j][4]=="r":
                         tmp_rawValue=float(bsnFile[i].split("|")[0])
-                        tmp_string="{:.8g}".format((1.0+self.__paraList[0][j])*tmp_rawValue) # TODO
+                        tmp_string="{:.8g}".format((1.0+self.__paraList[0][j])*tmp_rawValue) 
                     bsnFile[i]=tmp_string.rjust(16," ")+bsnFile[i][16:]
-        with open (self.__workingDir+"//basins.bsn",'w',newline="") as f: # Replacing bsn parameters
+        with open (self.__workingDir+"//basins.bsn",'w',newline="") as f: 
             f.writelines(bsnFile)
-        for i in range(len(self.__bsnList)): # Constructing hru to be replacced.
+        for i in range(len(self.__bsnList)): 
             for j in range(self.__hruList[i]):
                 hruFileHeader.append(str(int(self.__bsnList[i])).rjust(5,"0")+str(j+1).rjust(4,"0"))
         for i in range(len(self.__bsnList)):
-                subbasinHeader.append(str(int(self.__bsnList[i])).rjust(5,"0")+"0000") # Subbsn parameters stored in 000010000.rte and so on
+                subbasinHeader.append(str(int(self.__bsnList[i])).rjust(5,"0")+"0000") 
 
         for i in range(len(hruFileHeader)):
             for j in range(len(self.__soilParameter)):
@@ -136,7 +137,7 @@ class ProcessSWAT(object):
                     with open(self.__workingDir+"//"+hruFileHeader[i]+".sol", 'w') as f:
                         f.writelines(soilFile)
                         
-        for i in range(len(hruFileHeader)): # Replacing hru parameters TODO: FOR SOL need another one to modify.
+        for i in range(len(hruFileHeader)): 
             tmp_scaleHRU=0
             tmp_scaleSub=0
             tmp_scaleGbl=0
@@ -222,7 +223,7 @@ class ProcessSWAT(object):
             cmd=""
         os.system(cmd)
         splitedList=[]
-        with open (self.__workingDir+"//output.rch","r") as f: # ONLY rch has been extracted. TODO: other samples & daily
+        with open (self.__workingDir+"//output.rch","r") as f: 
             rawResults=f.readlines()
             rawResults=rawResults[9:]
         for i in rawResults:
@@ -326,7 +327,7 @@ class ProcessSWAT(object):
             resWriter.writerows(simResults)
         return(output)
 
-def check(): # The longest check() ever. Initializing the config file.
+def check(): 
     do_testRun=True
     global ratio,basinCount,hruList,hruCount,basinParameters,subbasinParameters,hruParameters,observedFile,extractionType,calibrationOrder,activeCalibration,activeHrulist,warmup,observedData,soilType,targetNSE
     tmp_basinParameters=[]
@@ -355,7 +356,7 @@ def check(): # The longest check() ever. Initializing the config file.
         os.mkdir(globalPath+"//ResCSV//")
     if not os.path.exists(globalPath+"//Parameters.txt"):
         raise(IOError("Model parameters file not found!"))
-    with open(globalPath+"//Parameters.txt","r") as f: # Reading config file, there should be a better way to achieve this TODO: daily data
+    with open(globalPath+"//Parameters.txt","r") as f: 
         parameters=f.readlines()
         for i in range(len(parameters)):
             if "--NUMBER OF SAMPLES--" in parameters[i]:
@@ -516,7 +517,7 @@ def check(): # The longest check() ever. Initializing the config file.
                 tmp_observedData.append(float(j.strip().split()[1]))
         observedData.append(tmp_observedData)
     print("Observed data has been scanned.\n")
-    if do_testRun: # Setting up a test run to verify original model
+    if do_testRun: 
         print("Setting up a test run to verify SWAT Model.\n Remove fin.fin FIRST!")
         startTime = datetime.datetime.now()
         if os.path.exists(globalPath+"//TestRun//"):
@@ -566,7 +567,7 @@ def sampleGeneration(): # Generating Samples
     subSampleS=[]
     subSampleG=[]
     for i in range(len(activeCalibration)):
-        tmp_list.append(calibrationOrder[activeCalibration[0]-1]) # TODO: Only the first Line of activeCalibration is considered!
+        tmp_list.append(calibrationOrder[activeCalibration[0]-1]) 
     for i in range(len(tmp_list)):
         tmp_subbasin=0
         for j in range(len(tmp_list[i])):
