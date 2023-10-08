@@ -1,3 +1,4 @@
+# Python calling SOM.m under Matlab program
 import subprocess
 
 def run_matlab_script(script_name):
