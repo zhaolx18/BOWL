@@ -18,7 +18,8 @@ os
 datetime
 math
 Usage
-1. Latin Hypercube Sampling (LHS) - compile2.py (BOM User Interface / Console)
+compile2.py (BOM User Interface / Console)
+1. Latin Hypercube Sampling (LHS)：LHS1.py
 Configuration File: Parameters.txt (see inside the file for writing requirements)
 Runoff Measured Data: observed.txt
 Study Area Soil Type: soil.csv
