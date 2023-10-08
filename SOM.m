@@ -1,7 +1,5 @@
 %%%SOM
 clear
-
-
 lr=0.1;          
 disp_freq=100;   
 max_epoch=1000;  
@@ -114,6 +112,6 @@ parameter_names = txt(1,1:end-1);
     xlswrite('SOM-range.xls', min_vals, 1, ['A' num2str(size(filtered_data,1)+6)]);
     xlswrite('SOM-range.xls', parameter_names, 1, ['B' num2str(size(filtered_data,1)+7)]);
     
-    disp('saved successfully'?);
+    disp('saved successfully');
     return;
 end
