@@ -1,3 +1,4 @@
+# Python calling run.m (Backpropagation Multi-Dimensional Nonlinear Global Sensitivity Analysis) under Matlab program
 import subprocess
 
 def run_matlab_script(script_name):
@@ -11,5 +12,5 @@ def run_matlab_script(script_name):
     else:
         print(f"MATLAB script executed successfully. STDOUT: {stdout.decode()}")
 
-script_name = "E:\\Zhao\\2023-10\\BOM-2\\run8.m"
+script_name = "E:\\Zhao\\2023-10\\BOM-2\\run8.m"   ## Replace with your actual file path
 run_matlab_script(script_name)
