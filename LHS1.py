@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
-'''
-File: SWAT_LHS_parameter.py
-File Created: 2022-05-01 13:48:33
-Author: IchinoseHimeki (darwinlee19980811@hotmail.com)
------
-Last Modified: 2022-12-19 22:37:24
-Modified By: IchinoseHimeki (darwinlee19980811@hotmail.com)
------
-Copyright 2022
-Requisite: Python 3.10+, pyDOE2, numpy
-Description: A programs which calinbrate SWAT 2012 rev. 682 in a far more stupid way than SWAT-CUP by using LHS method. Details are on https://naive514.top/blablabla (only in Chinese, if want to hear further bullshit, just contact my email on github.)
-'''
+#Requisite: Python 3.10+, pyDOE2, numpy
+
 from multiprocessing import cpu_count
 from multiprocessing.pool import Pool
 import shutil
