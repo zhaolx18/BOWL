@@ -20,5 +20,5 @@ def run_matlab_script(script_name):
     else:
         print(f"MATLAB script executed successfully. STDOUT: {decoded_stdout}")
 
-script_name = "E:\\Zhao\\2023-10\\BOM-2\\SOM.m"   ## Replace with your actual file path
+script_name = " "   ## Replace with your actual file path
 run_matlab_script(script_name)

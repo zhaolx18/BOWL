@@ -1,4 +1,4 @@
-#SAMPLES NUMBER Q=100
-##PARAMETER NUMBER N=25
-##CLUSTERING NUMBERS M=6
-##DATA RANGES RowRange=A2:Y101
+#Number of samples eg: Q=100
+##Number of parameters eg: N=25
+##Number of clusters eg: M=6
+##DATA RANGES eg: RowRange=A2:Y101

@@ -1,6 +1,4 @@
 # Latin Hypercube Sampling for SWAT runoff parameters
-# -*- coding: utf-8 -*-
-
 
 from multiprocessing import cpu_count
 from multiprocessing.pool import Pool
@@ -686,12 +684,10 @@ import csv
 import pandas as pd
 
 def printRes(results): 
-    # 清空 results.csv 的内容
+
     csv_path = globalPath + "//results.csv"
     with open(csv_path, "w") as f:
         f.write("")
-    
-    # 将新内容写入 results.csv
     with open(csv_path, "a", newline="") as f:
         write = csv.writer(f)
         head = []
@@ -734,10 +730,10 @@ def printRes(results):
         write.writerow(head)
         write.writerows(results)
     
-    # 读取 results.csv 并保存为 BP.xls
+  
     df = pd.read_csv(csv_path)
-    df.to_excel(globalPath + "//BP.xls", index=False)
-    # 读取 results.csv 并保存为 BP.xls
+    df.to_excel(globalPath + "//BP.xls", index=False,engine='openpyxl')
+
     df = pd.read_csv(csv_path)
     df.to_excel(globalPath + "//SOM.xlsx", index=False)
         
