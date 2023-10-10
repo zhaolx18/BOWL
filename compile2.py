@@ -10,14 +10,14 @@ def run_script(script_name):
     output_display.yview(tk.END)  
 
 def run_lhs1():
-    threading.Thread(target=run_script, args=("LHS1.py",), daemon=True).start()
+    threading.Thread(target=run_script, args=("LHS.py",), daemon=True).start()
 def run_95ppu6():
-    threading.Thread(target=run_script, args=("95PPU6.py",), daemon=True).start()
+    threading.Thread(target=run_script, args=("95PPU.py",), daemon=True).start()
 def run_bp_py():
     threading.Thread(target=run_script, args=("BP-py.py",), daemon=True).start()
 
 def run_som_py():
-    threading.Thread(target=run_script, args=("SOM-py2.py",), daemon=True).start()
+    threading.Thread(target=run_script, args=("SOM-py.py",), daemon=True).start()
 
 root = tk.Tk()
 root.title("BOM")
@@ -29,7 +29,7 @@ btn_lhs1.pack(pady=10)
 btn_95ppu6 = tk.Button(root, text="Model Uncertainty Analysis-95PPU", command=run_95ppu6)
 btn_95ppu6.pack(pady=10)
 
-btn_bp_py = tk.Button(root, text="BP Multi-Dimensional Nonlinear Global Sensitivity Analysis", command=run_bp_py)
+btn_bp_py = tk.Button(root, text="BP Multidimensional Nonlinear Global Sensitivity Analysis", command=run_bp_py)
 btn_bp_py.pack(pady=10)
 
 btn_som_py = tk.Button(root, text="SOM for Parameter Range Optimization", command=run_som_py)

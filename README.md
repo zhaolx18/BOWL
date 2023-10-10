@@ -2,8 +2,6 @@
 
 A systematic program for the calibration and uncertainty analysis of hydrological models, using the [Soil and Water Assessment Tool (SWAT)](https://swat.tamu.edu/) as an example.
 
-## Prerequisites
-
 ### Code Language
 
 - **Python:** 3.9.X
@@ -28,13 +26,13 @@ A systematic program for the calibration and uncertainty analysis of hydrologica
 The [`test_case`](test_case) folder includes example input and output files for the model.
 
 > **Attention:** You need to specify the actual file locations in the following Python scripts (See Comments in scripts):
-> - [`95PPU6.py`](95PPU6.py)
+> - [`95PPU.py`](95PPU.py)
 > - [`BP-py.py`](BP-py.py)
-> - [`SOM.py`](SOM.py)
+> - [`SOM-py.py`](SOM-py.py)
 
 ### Usage Steps 
 
-#### 1. Latin Hypercube Sampling: `LHS1.py`
+#### 1. Latin Hypercube Sampling: `LHS.py`
 
 - **Configuration File:** `Parameters.txt`
 - **Runoff Measured Data:** `observed.txt`

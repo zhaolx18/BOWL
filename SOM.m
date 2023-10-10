@@ -81,7 +81,6 @@ for epoch=1:max_epoch
 end
 
 disp('');
-disp('Vectors and their classification:');
 result = [X3, classification, classification*(1/M)]; 
 sorted_result = sortrows(result, size(result,2)-1);
 sorted_result = [(1:size(sorted_result,1))', sorted_result];
