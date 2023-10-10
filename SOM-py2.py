@@ -20,5 +20,5 @@ def run_matlab_script(script_name):
     else:
         print(f"MATLAB script executed successfully. STDOUT: {decoded_stdout}")
 
-script_name = " "   ## Replace with your actual file path
+script_name = " "
 run_matlab_script(script_name)
