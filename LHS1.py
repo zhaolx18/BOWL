@@ -1,4 +1,5 @@
 # Latin Hypercube Sampling for SWAT runoff parameters
+# Code Forked From https://github.com/IchinoseHimeki/Hydro-Toolbox/blob/master/Support/SWAT_LHS_Parameter.py
 
 from multiprocessing import cpu_count
 from multiprocessing.pool import Pool
@@ -679,9 +680,6 @@ def runModel(instance): # Provide a method to building instances
     locals()["instance_"+str(instance)]=ProcessSWAT(instance[0],instance[1],instance[2],instance[3],instance[4],instance[5],instance[6],instance[7],instance[8],instance[9],instance[10],instance[11],instance[12])
     res=locals()["instance_"+str(instance)].run()
     return res
-
-import csv
-import pandas as pd
 
 def printRes(results): 
 
