@@ -11,7 +11,7 @@ for i = 1:length(C{1})
     key = C{1}{i};
     value = C{2}{i};
     if strcmp(key, 'RowRange')
-        eval([key '=' char(39) value char(39) ';']);  ?
+        eval([key '=' char(39) value char(39) ';']);  
     else
         eval([key '=' value ';']);  
     end
@@ -49,7 +49,6 @@ disp('Training begins...')
 classification = zeros(Q,1); 
 for epoch=1:max_epoch
    for q=1:Q
-?
       for m=1:M
          A(m)=(X(:,q)'-W(m,:))*(X(:,q)-W(m,:)');
       end
