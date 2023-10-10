@@ -1,2 +1,2 @@
-##input A2:Y101
-##output Z2:Z101
+##input A2:Y501
+##output Z2:Z501
