@@ -51,7 +51,7 @@ The `test_case` folder includes example input and output files for the model.
 - **Sampling Process File:** `MergedCSV_DataOnly` (Sample at least 500 times for uncertainty analysis to calculate the model uncertainty (95PPU).)
 - **Output:** The results are stored in `95PPU_result.txt`.
 
-#### 3. BP Multi-Dimensional Nonlinear Global Sensitivity Analysis
+#### 3. BP Multidimensional Nonlinear Global Sensitivity Analysis
 
 - **Configuration File:** `config-BP` (It reads the corresponding rows and columns from `BP.xls` to perform calculations.)
 - **Output:** Results are presented graphically. The larger the value, the higher the sensitivity. Values from different simulation runs could not be compared.
