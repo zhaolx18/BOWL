@@ -19,9 +19,9 @@
 
 --HRU PARAMETERS-- # EPCO|hru|0|1|v|g
 
---SOIL PARAMETERS-- # SMFMX|bsn|5|20|v|g
+--SOIL PARAMETERS-- # Bulk Density Moist|sol|-0.6|0.6|r
 
---SOIL CSV FILE-- # Bulk Density Moist|sol|-0.6|0.6|r
+--SOIL CSV FILE-- # soil.csv
 
 --WARMUP MONTH-- # 60
 
