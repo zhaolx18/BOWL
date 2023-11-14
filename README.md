@@ -1,5 +1,3 @@
-# BP-SA+SOM (BOM)
-
 A systematic program for the calibration and uncertainty analysis of hydrological models, using the [Soil and Water Assessment Tool (SWAT)](https://swat.tamu.edu/) as an example.
 
 ### Code Language
@@ -19,7 +17,7 @@ A systematic program for the calibration and uncertainty analysis of hydrologica
 
 ## Usage
 
-### [`compile2.py` (BOM User Interface)](compile2.py)
+### [`compile2.py` (BOWL User Interface)](compile2.py)
 
 #### Test Case
 
